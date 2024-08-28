@@ -1,16 +1,20 @@
+# Use an official Ubuntu as the base image
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y apache2 unzip wget
+# Update the package list and install Apache and unzip
+RUN apt-get update && apt-get install -y apache2 unzip
 
-# Download and verify the zip file
-RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page296/oxer.zip -O /tmp/oxer.zip && \
-    unzip -l /tmp/oxer.zip
+# Copy the todo.zip file from the local machine to the Docker image
+COPY todo.zip /tmp/todo.zip
 
-# Unzip the file and move the contents to the Apache web root
-RUN unzip /tmp/oxer.zip -d /tmp && mv /tmp/*/* /var/www/html/
+# Unzip the todo.zip file and move the contents to the Apache web root directory
+RUN unzip /tmp/todo.zip -d /tmp && mv /tmp/*/* /var/www/html/
 
+# Remove the default Apache index.html if still present
 RUN rm -f /var/www/html/index.html
 
+# Expose port 80 to the outside world
 EXPOSE 80
 
+# Start Apache when the container starts
 CMD ["apache2ctl", "-D", "FOREGROUND"]
