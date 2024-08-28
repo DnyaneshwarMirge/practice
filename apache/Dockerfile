@@ -9,7 +9,7 @@ RUN rm -rf /var/www/html/index.html
 
 WORKDIR /var/www/html
 
-COPY MarioJump-main /var/www/html
+COPY neogym-html /var/www/html
 
 EXPOSE 80
 
