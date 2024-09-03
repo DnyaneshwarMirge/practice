@@ -13,10 +13,10 @@ services:
   traffic:
     build: /root/practice-host-todo-Dockerfile/micro-services/Traffic/
     ports:
-      - '81:81'
+      - '81:80'
     container_name: traffic_apache
     volumes:
-      - myapp:/var/www/html/
+      - trafficdata:/var/www/html/
     network_mode: bridge
 
 volumes:
