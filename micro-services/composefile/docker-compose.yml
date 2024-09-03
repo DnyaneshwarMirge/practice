@@ -5,7 +5,7 @@ services:
       - '80:80'
     container_name: todo_apache
     volumes:
-      - myapp:/var/www/html/
+      - v1:/var/www/html/
     network_mode: bridge
 
   traffic:
@@ -14,10 +14,10 @@ services:
       - '81:80'
     container_name: traffic_apache
     volumes:
-      - v1:/var/www/html/
+      - v2:/var/www/html/
     network_mode: bridge
 
 volumes:
-    myapp:
-volumes:
     v1:
+volumes:
+    v2:
