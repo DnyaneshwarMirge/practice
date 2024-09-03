@@ -18,5 +18,4 @@ services:
     network_mode: bridge
 
 volumes:
-  myapp:
     v1:
