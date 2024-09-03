@@ -14,6 +14,6 @@ RUN mkdir /var/www/html/puppy
 
 COPY ./ /var/www/html/puppy/
 
-EXPOSE 80
+EXPOSE 84
     
 CMD ["apachectl", "-D", "FOREGROUND"]
