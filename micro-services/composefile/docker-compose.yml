@@ -1,9 +1,19 @@
-todo:
-  frontend-neogym:
-    build: /root/
-    ports:
+   services:
+    todo:
+      build: /opt/practice-host-todo-Dockerfile/micro-services/Todo/
+      ports:
       - '80:80'  # Corrected 'port' to 'ports' and fixed the syntax
-    container_name: apache2
+      container_name: apache2
+    volumes:
+      - myapp:/var/www/html/  # Corrected 'volume' to 'volumes'
+    network_mode: bridge
+
+    services:
+    traffic:
+      build: /opt/practice-host-todo-Dockerfile/micro-services/Traffic/
+      ports:
+      - '81:81'  # Corrected 'port' to 'ports' and fixed the syntax
+      container_name: apache2
     volumes:
       - myapp:/var/www/html/  # Corrected 'volume' to 'volumes'
     network_mode: bridge
