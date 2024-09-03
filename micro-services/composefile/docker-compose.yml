@@ -6,7 +6,8 @@ services:
     container_name: todo_apache
     volumes:
       - v1:/var/www/html/
-    network_mode: bridge
+    network_mode: 
+      bridge
 
   traffic:
     build: /root/practice-host-todo-Dockerfile/micro-services/Traffic/
@@ -15,9 +16,9 @@ services:
     container_name: traffic_apache
     volumes:
       - v2:/var/www/html/
-    network_mode: bridge
+    network_mode: 
+      bridge
 
 volumes:
     v1:
-volumes:
     v2:
