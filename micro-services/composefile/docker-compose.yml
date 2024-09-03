@@ -29,7 +29,7 @@ season:
     network_mode: 
       bridge
 number:
-    build: /rooot/practice-host-todo-Dockerfile/micro-services/Number/
+    build: /root/practice-host-todo-Dockerfile/micro-services/Number/
     ports:
       - '82:80'
     container_name: number_apache
