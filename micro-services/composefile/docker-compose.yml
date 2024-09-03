@@ -16,7 +16,7 @@ services:
       - '81:80'
     container_name: traffic_apache
     volumes:
-      - trafficdata:/var/www/html/
+      - myapp2:/var/www/html/
     network_mode: bridge
 
 volumes:
