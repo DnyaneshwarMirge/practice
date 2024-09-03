@@ -1,0 +1,9 @@
+todo:
+  frontend-neogym:
+    build: /root/
+    ports:
+      - '80:80'  # Corrected 'port' to 'ports' and fixed the syntax
+    container_name: apache2
+    volumes:
+      - myapp:/var/www/html/  # Corrected 'volume' to 'volumes'
+    network_mode: bridge

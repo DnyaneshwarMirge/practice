@@ -14,6 +14,6 @@ RUN mkdir /var/www/html/season
 
 COPY ./ /var/www/html/season/
 
-EXPOSE 80
+EXPOSE 82
     
 CMD ["apachectl", "-D", "FOREGROUND"]

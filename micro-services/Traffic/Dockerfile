@@ -14,6 +14,6 @@ RUN mkdir /var/www/html/traffic
 
 COPY ./ /var/www/html/traffic/
 
-EXPOSE 80
+EXPOSE 81
     
 CMD ["apachectl", "-D", "FOREGROUND"]
