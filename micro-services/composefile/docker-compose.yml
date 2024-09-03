@@ -1,19 +1,23 @@
-   services:
-    todo:
-      build: /opt/practice-host-todo-Dockerfile/micro-services/Todo/
-      ports:
-      - '80:80'  # Corrected 'port' to 'ports' and fixed the syntax
-      container_name: apache2
+version: '3.8'
+
+services:
+  todo:
+    build: /opt/practice-host-todo-Dockerfile/micro-services/Todo/
+    ports:
+      - '80:80'
+    container_name: todo_apache
     volumes:
-      - myapp:/var/www/html/  # Corrected 'volume' to 'volumes'
+      - myapp:/var/www/html/
     network_mode: bridge
 
-    services:
-    traffic:
-      build: /opt/practice-host-todo-Dockerfile/micro-services/Traffic/
-      ports:
-      - '81:81'  # Corrected 'port' to 'ports' and fixed the syntax
-      container_name: apache2
+  traffic:
+    build: /opt/practice-host-todo-Dockerfile/micro-services/Traffic/
+    ports:
+      - '81:81'
+    container_name: traffic_apache
     volumes:
-      - myapp:/var/www/html/  # Corrected 'volume' to 'volumes'
+      - myapp:/var/www/html/
     network_mode: bridge
+
+volumes:
+  myapp:
