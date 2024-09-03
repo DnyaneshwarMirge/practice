@@ -14,6 +14,6 @@ RUN mkdir /var/www/html/number
 
 COPY ./ /var/www/html/number/
 
-EXPOSE 80
+EXPOSE 83
     
 CMD ["apachectl", "-D", "FOREGROUND"]
