@@ -31,7 +31,7 @@ season:
 number:
     build: /root/practice-host-todo-Dockerfile/micro-services/Number/
     ports:
-      - '82:80'
+      - '83:80'
     container_name: number_apache
     volumes:
       - v4:/var/www/html/
