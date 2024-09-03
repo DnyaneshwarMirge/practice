@@ -29,11 +29,11 @@ services:
     network_mode: 
       bridge
       
-  number:
-    build: /root/practice-host-todo-Dockerfile/micro-services/Number/
+  puppy:
+    build: /root/practice-host-todo-Dockerfile/micro-services/Puppy/
     ports:
-      - '83:80'
-    container_name: number_apache
+      - '84:80'
+    container_name: puppy_apache
     volumes:
       - v4:/var/www/html/
     network_mode: 
