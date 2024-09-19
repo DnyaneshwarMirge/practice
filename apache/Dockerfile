@@ -9,7 +9,7 @@ RUN rm -rf /var/www/html/index.html
 
 WORKDIR /var/www/html
 
-COPY neogym-html /var/www/html
+COPY todov2 /var/www/html
 
 EXPOSE 80
 
